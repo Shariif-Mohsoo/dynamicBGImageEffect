@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="hero">
+      <!-- <img src="" alt=""> -->
+      <div class="navbar">
+        <img src="./images/newLogo.jpg" alt="random logo" class="logo" />
+        <div class="user">
+          <button type="button">Explore</button>
+          <img src="./images/dp.jpg" alt="User" />
+        </div>
+      </div>
+      <div class="container">
+        <div class="info">
+          <h1>DISCOVER</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+            quibusdam eum veniam dolor ea iste animi saepe aspernatur voluptates
+            laboriosam.
+          </p>
+          <input type="text" placeholder="Search" disabled />
+        </div>
+      </div>
+    </div>
+    <div class="slider">
+      <span id="prev"> < </span>
+      <div class="preview">
+        <img
+          src="./images/carl-heyerdahl-KE0nC8-58MQ-unsplash.jpg"
+          class="active thumbnail"
+        />
+        <img
+          src="./images/charlesdeluvio-pjAH2Ax4uWk-unsplash.jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/freezydreamin-LXw-Dg0H4is-unsplash.jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/greg-rakozy-oMpAz-DN-9I-unsplash (2).jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/javen-yang-MWZi4XTIsKA-unsplash.jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/kseniia-rastvorova-U2AwijfUNS4-unsplash.jpg"
+          class="thumbnail"
+        />
+        <img
+          src="./images/jakob-owens-PVPsGlhs3rU-unsplash.jpg"
+          class="thumbnail"
+        />
+      </div>
+      <span id="next"> > </span>
+    </div>
+
+    <script>
+      const prev = document.querySelector("#prev");
+      const next = document.querySelector("#next");
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      const hero = document.querySelector("#hero");
+      const backgroundImages = new Array(
+        "./images/carl-heyerdahl-KE0nC8-58MQ-unsplash.jpg",
+        "./images/charlesdeluvio-pjAH2Ax4uWk-unsplash.jpg",
+        "./images/freezydreamin-LXw-Dg0H4is-unsplash.jpg",
+        "./images/greg-rakozy-oMpAz-DN-9I-unsplash (2).jpg",
+        "./images/javen-yang-MWZi4XTIsKA-unsplash.jpg",
+        "./images/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg",
+        "./images/jakob-owens-PVPsGlhs3rU-unsplash.jpg",
+        "./images/kseniia-rastvorova-U2AwijfUNS4-unsplash.jpg"
+      );
+      let i = 0;
+      next.onclick = function () {
+        if (i < backgroundImages.length - 1) {
+          hero.style.backgroundImage = `url(${backgroundImages[i + 1]})`;
+          thumbnails[i + 1].classList.add("active");
+          thumbnails[i].classList.remove("active");
+          i++;
+        }
+      };
+      prev.onclick = function () {
+        if (i >= 0) {
+          hero.style.backgroundImage = `url(${backgroundImages[i - 1]})`;
+          thumbnails[i - 1].classList.add("active");
+          thumbnails[i].classList.remove("active");
+          i--;
+        }
+      };
+    </script>
+  </body>
+</html>
